@@ -29,7 +29,25 @@ class SheetsController extends AppController{
 				throw new NotFoundException('BadRequestException');
 			}
 		}
-
+		$this->LoadModel('Competence');
+		$d['treelist'] = $this->Competence->generateTreeList();
+		$this->LoadModel('Discipline');
+		$d['disciplines'] = $this->Discipline->find('list', 
+			array( 'order'=> 'Discipline.name ASC' )
+			);
+		$this->LoadModel('LearningAxis');
+		$d['learningAxes'] = $this->LearningAxis->find('list', 
+			array( 'order'=> 'LearningAxis.name ASC' )
+			);
+		$this->LoadModel('Material');
+		$d['materials'] = $this->Material->find('list', 
+			array( 'order'=> 'Material.name ASC' )
+			);
+		$this->LoadModel('Evaluation');
+		$d['evaluations'] = $this->Evaluation->find('list', 
+			array( 'order'=> 'Evaluation.name ASC' )
+			);
+		$this->set($d);
 	}
 	function delete($id){
         $this->Sheet->delete( $id );

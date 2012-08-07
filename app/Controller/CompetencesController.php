@@ -21,7 +21,15 @@ class CompetencesController extends AppController{
 					    'class' => 'alert-success'
 					));
 				$this->redirect(array('action' => 'index'));
-			}	
+			} else {
+				$this->Session->setFlash(
+					__("Merci de corriger les erreurs"), 
+					'alert', 
+					array(
+					    'plugin' => 'TwitterBootstrap',
+					    'class' => 'alert-error'
+					));
+			}
 		} elseif ($id) {
 			$this->Competence->id = $id;
 			$this->request->data = $this->Competence->read();
