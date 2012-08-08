@@ -20,6 +20,22 @@ class Sheet extends AppModel {
                 'finderQuery'            => '',
                 'deleteQuery'            => '',
                 'insertQuery'            => ''
+            ),
+        'Competence' =>
+            array(
+                'className'              => 'Competence',
+                'joinTable'              => 'competences_sheets',
+                'foreignKey'             => 'sheet_id',
+                'associationForeignKey'  => 'competence_id',
+                'unique'                 => true,
+                'conditions'             => '',
+                'fields'                 => '',
+                'order'                  => '',
+                'limit'                  => '',
+                'offset'                 => '',
+                'finderQuery'            => '',
+                'deleteQuery'            => '',
+                'insertQuery'            => ''
             )
     );
 
@@ -33,5 +49,10 @@ class Sheet extends AppModel {
 	        'message'    => 'Ce champ ne peut pas rester vide'
 	    ),   
     );
+
+    public function beforeSave() {
+        $this->data['Sheet']['date_last_modified'] = date('Y-m-d H:i:s');
+        return true;
+    }
 
 }

@@ -8,9 +8,9 @@
 	<?php echo $this->Form->input('name',array('label'=>"Titre",'class' => 'span6')); ?>
 	<?php echo $this->Form->input('discipline_id',array('label'=>"Matière",'class' => 'span6')); ?>
 	<?php echo $this->Form->input('competance_id',array('label'=>"Compétence visée",'class' => 'span6', 'options'=>$treelist)); ?>
-	<?php echo $this->Form->input('competance_list_id',array('label'=>"Compétence utilisée",'class' => 'span6', 'options'=>$treelist, 'multiple' => true)); ?>
+	<?php echo $this->Form->input('Competence.Competence',array('label'=>"Compétence utilisée",'class' => 'span6', 'options'=>$treelist)); ?>
 	<?php echo $this->Form->input('learning_axis_id',array('label'=>"Axe d'apprentissage",'class' => 'span6')); ?>
-	<?php echo $this->Form->input('materials',array('label'=>"Matériel",'class' => 'span6')); ?>
+	<?php echo $this->Form->input('Material.Material',array('label'=>"Matériel",'class' => 'span6')); ?>
 	<?php echo $this->Form->input('teacher_task',array('label'=>"Tache de l'enseignant",'class' => 'span6')); ?>
 	<?php echo $this->Form->input('target',array('label'=>"Objectif",'class' => 'span6')); ?>
 	<?php echo $this->Form->input('development',array('label'=>"Développement",'class' => 'span6')); ?>

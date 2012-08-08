@@ -4,7 +4,7 @@ class SheetsController extends AppController{
 	function index(){
 		$this->paginate = array(
 			'recursive'	=> -1,
-			'order'		=> 'Sheet.name ASC' 
+			'order'		=> 'Sheet.id ASC' 
 			);
 		$d['sheets'] = $this->Paginate('Sheet');
 		$this->set($d);
@@ -39,8 +39,7 @@ class SheetsController extends AppController{
 		$d['learningAxes'] = $this->LearningAxis->find('list', 
 			array( 'order'=> 'LearningAxis.name ASC' )
 			);
-		$this->LoadModel('Material');
-		$d['materials'] = $this->Material->find('list', 
+		$d['materials'] = $this->Sheet->Material->find('list', 
 			array( 'order'=> 'Material.name ASC' )
 			);
 		$this->LoadModel('Evaluation');

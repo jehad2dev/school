@@ -14,6 +14,7 @@
 		<tr>
 			<th width="100px">Action</th>
 			<th>Nom</th>
+			<th>Last update</th>
 		</tr>
 		<?php foreach ($sheets as $k => $v):  $v = current($v);?>
 		<tr>
@@ -32,6 +33,7 @@
 					'Voulez vous vraiment supprimer ?' ); ?>
 				</td>
 				<td><?php echo $v['name'] ?></td>
+				<td><?php echo $v['date_last_modified'] ?></td>
 			</tr>
 		<?php endforeach ?>
 	</table>
