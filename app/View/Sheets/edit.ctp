@@ -18,3 +18,5 @@
 	<?php echo $this->Form->input('progress',array('label'=>"Progression",'class' => 'span6')); ?>
 	<?php echo $this->Form->end('Enregistrer'); ?>
 </div>
+
+<?php echo $this->Html->script('Sheets/edit', array('block' => 'scriptBottom')); ?>

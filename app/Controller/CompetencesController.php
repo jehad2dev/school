@@ -58,5 +58,22 @@ class CompetencesController extends AppController{
         $this->redirect($this->referer());
     }
 
+    function byDiscipline() {
+    	if ($this->request->is('ajax')) {
+		    $condition = array(
+				'discipline_id' => $this->request->query['id']
+				);
+			$d['datas'] = $this->Competence->generateTreeList($condition);
+			die(json_encode($d['datas']));
+		} else {
+			//throw new NotFoundException();
+			debug($this->request->query['id']);
+			$condition = array(
+				'discipline_id' => $this->request->query['id']
+				);
+			$d = $this->Competence->generateTreeList($condition);
+			debug($d);
+		}
+    }
 
 }
