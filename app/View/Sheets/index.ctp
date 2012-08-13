@@ -12,7 +12,7 @@
 <div>
 	<table>
 		<tr>
-			<th width="100px">Action</th>
+			<th width="150px">Action</th>
 			<th>Nom</th>
 			<th>Last update</th>
 		</tr>
@@ -23,6 +23,14 @@
 					array(
 						'action'=>'edit',
 						$v['id']),
+					array('escape' => false,'class' => 'btn')); ?>
+
+				<?php echo $this->Html->link('<i class="icon-repeat"></i>',
+					array(
+						'action'=>'edit',
+						$v['id'],
+						'?' => array(
+							'method' => 'duplicated')),
 					array('escape' => false,'class' => 'btn')); ?>
 
 				<?php echo $this->Html->link('<i class="icon-trash icon-white"></i>',
@@ -40,3 +48,7 @@
 
 	<?php echo $this->Paginator->pagination(); ?>
 </div>
+<br>
+<div><i class="icon-edit"></i> Modifier</div>
+<div><i class="icon-repeat"></i> Dupliquer</div>
+<div><i class="icon-trash"></i> Supprimer</div>

@@ -25,6 +25,9 @@ class SheetsController extends AppController{
 		} elseif ($id) {
 			$this->Sheet->id = $id;
 			$this->request->data = $this->Sheet->read();
+			if (isset($this->request->query['method']) and $this->request->query['method'] == 'duplicated') {
+				unset($this->request->data['Sheet']['id']);	
+			}
 			if (empty($this->request->data)) {
 				throw new NotFoundException('BadRequestException');
 			}
