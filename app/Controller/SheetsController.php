@@ -24,6 +24,7 @@ class SheetsController extends AppController{
 			}	
 		} elseif ($id) {
 			$this->Sheet->id = $id;
+			$this->Sheet->recursive = 1;
 			$this->request->data = $this->Sheet->read();
 			if (isset($this->request->query['method']) and $this->request->query['method'] == 'duplicated') {
 				unset($this->request->data['Sheet']['id']);	
@@ -38,6 +39,10 @@ class SheetsController extends AppController{
 		$d['disciplines'] = $this->Discipline->find('list', 
 			array( 'order'=> 'Discipline.name ASC' )
 			);
+		$this->LoadModel('Project');
+		$d['projects'] = $this->Project->find('list', 
+			array( 'order'=> 'Project.name ASC' )
+			);
 		$this->LoadModel('LearningAxis');
 		$d['learningAxes'] = $this->LearningAxis->find('list', 
 			array( 'order'=> 'LearningAxis.name ASC' )
@@ -51,6 +56,14 @@ class SheetsController extends AppController{
 			);
 		$this->set($d);
 	}
+
+	function view($id) {
+		$this->Sheet->id = $id;
+		$this->Sheet->recursive = 1;
+		$d['data'] = $this->Sheet->read();
+		$this->set($d);
+	}
+
 	function delete($id){
         $this->Sheet->delete( $id );
         $this->Session->setFlash(

@@ -39,7 +39,17 @@ class Sheet extends AppModel {
             )
     );
 
-    //public $recursive = -1;
+    public $belongsTo = array(
+        'Project',
+        'Discipline',
+        'Evaluation',
+        'LearningAxis',
+        'TargetCompetence' => array(
+            'className'     => 'Competence',
+            'foreignKey'    => 'competence_id'),
+        );
+
+    public $recursive = -1;
 
     public $validate = array(
     	'name' => array(

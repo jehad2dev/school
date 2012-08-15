@@ -2,7 +2,7 @@ var targetSheetCompetanceSelected 	= new Array();
 var targetCompetancesSelected 		= new Array();
 
 $(document).ready(function() {
-	$("#SheetCompetanceId option:selected").each(function () {
+	$("#SheetCompetenceId option:selected").each(function () {
 		targetSheetCompetanceSelected.push($(this).val());
 	});
 	$("#CompetenceCompetence option:selected").each(function () {
@@ -17,7 +17,7 @@ $(document).ready(function() {
 
 function loadCompetences(id) {
 	$.get("/competences/byDiscipline", {id : id}, function (data) {
-		var targetSheetCompetance = $("#SheetCompetanceId").get(0);
+		var targetSheetCompetance = $("#SheetCompetenceId").get(0);
 		var targetCompetances = $("#CompetenceCompetence").get(0);
 		targetSheetCompetance.options.length = 0;
 		targetCompetances.options.length = 0;

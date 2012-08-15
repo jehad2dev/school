@@ -26,6 +26,7 @@
 
 	<?php echo $this->Html->css('bootstrap.min'); ?>
 	<?php echo $this->Html->css('bootstrap-responsive.min'); ?>
+	<?php echo $this->Html->css('print',null, array(' media'=>"print") ); ?>
 
 </head>
 <body>
@@ -56,6 +57,15 @@
 								array(
 									'action'=>'index',
 									'controller'=>'materials'
+									)
+								); ?>
+						</li>
+						<li class="<?php echo ($this->params['controller'] == 'projects' ?'active':''); ?>">
+							<?php echo $this->Html->link(
+								"Projets",
+								array(
+									'action'=>'index',
+									'controller'=>'projects'
 									)
 								); ?>
 						</li>
