@@ -3,7 +3,7 @@
 -- Server version:               5.5.16-log - MySQL Community Server (GPL)
 -- Server OS:                    Win64
 -- HeidiSQL version:             7.0.0.4053
--- Date/time:                    2012-08-15 15:16:11
+-- Date/time:                    2012-08-16 23:06:35
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -19,7 +19,7 @@ USE `school`;
 CREATE TABLE IF NOT EXISTS `competences` (
   `id` mediumint(9) NOT NULL AUTO_INCREMENT,
   `parent_id` mediumint(9) DEFAULT '0',
-  `name` varchar(99) NOT NULL DEFAULT '0',
+  `name` varchar(155) NOT NULL DEFAULT '0',
   `lft` tinyint(4) NOT NULL DEFAULT '0',
   `rght` tinyint(4) NOT NULL DEFAULT '0',
   `discipline_id` tinyint(4) NOT NULL DEFAULT '0',
