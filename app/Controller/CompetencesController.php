@@ -29,6 +29,7 @@ class CompetencesController extends AppController{
 					    'plugin' => 'TwitterBootstrap',
 					    'class' => 'alert-error'
 					));
+				debug($this->validationErrors);
 			}
 		} elseif ($id) {
 			$this->Competence->id = $id;
