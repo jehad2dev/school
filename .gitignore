@@ -17,8 +17,6 @@ local.properties
 .settings/
 .loadpath
 
-Config
-
 # External tool builders
 .externalToolBuilders/
 
