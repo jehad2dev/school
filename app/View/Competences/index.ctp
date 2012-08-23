@@ -29,7 +29,7 @@
 						'action'=>'delete',
 						$v['id']),
 					array('escape' => false,'class' => 'btn btn-danger'),
-					'Voulez vous vraiment supprimer ?' ); ?>
+					'Voulez vous vraiment supprimer ? Les compétences enfants serront supprimées' ); ?>
 				</td>
 				<td><?php echo $v['name'] ?></td>
 			</tr>

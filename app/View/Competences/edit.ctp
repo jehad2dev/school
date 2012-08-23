@@ -10,3 +10,5 @@
 	<?php echo $this->Form->input('name',array('label'=>"Nom")); ?>
 	<?php echo $this->Form->end('Enregistrer'); ?>
 </div>
+
+<?php echo $this->Html->script('Competences/edit', array('block' => 'scriptBottom')); ?>
